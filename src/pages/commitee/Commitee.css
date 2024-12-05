@@ -4,9 +4,8 @@
   padding-top: 100px;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
   /* Add a margin bottom to create space for the footer */
-  margin-bottom: 50px; /* adjust the value according to your footer height */
+  margin-bottom: 100px; /* adjust the value according to your footer height */
 }
 /*changed .committe-container */
 /* Background image with overlay */

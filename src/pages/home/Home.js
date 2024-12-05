@@ -73,7 +73,7 @@ const Home = () => {
             style={{
               color: "#fe491e",
               textAlign: "center",
-              paddingTop: "40px",
+              paddingTop: "180px",
               fontSize: "2.3rem",
               fontFamily: "Poppins",
             }}
@@ -148,6 +148,8 @@ const Home = () => {
                   }}
                 >
                   {/* added CSS (home.css) to resolve overlapping)*/}
+                  <br />
+                  <br />
                   Founder & Secretary General’s Message
                 </h2>
                 <div className="founder-message">

@@ -2,20 +2,18 @@
   font-size: 3rem;
   font-weight: bold;
   background: linear-gradient(45deg, #fe491e, #cb7300);
-  /* Gradient color */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* Text color from gradient */
+  background-clip: text; /* Standard property */
+  -webkit-background-clip: text; /* WebKit-specific for Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
   text-shadow: 10px 8px 30px rgba(0, 0, 0, 0.7);
-  /* Text shadow */
   margin: 0;
+  text-align: center;
 }
 
 .countdown {
   text-align: center;
   font-family: Arial, sans-serif;
   color: #ffffff;
-  /* background-color: #fe491e; */
   padding: 20px;
   border-radius: 10px;
 }
@@ -23,15 +21,13 @@
 .progress-container {
   display: inline-block;
   margin: 10px;
+  text-align: center;
 }
 
 .progress-ring {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .progress-ring__circle {
@@ -41,23 +37,49 @@
 }
 
 .progress-ring__background {
-  stroke: #070707;
+  stroke: #070707; /* Dark background for better contrast */
 }
 
 .progress-ring__bar {
   stroke: #fe491e;
+  transition: stroke-dashoffset 0.5s ease; /* Smooth progress transition */
 }
 
 .progress-text {
-  fill: #ffffff;
-  /* Text color */
+  fill: #ffffff; /* Text color */
   font-size: 2rem;
   font-weight: bold;
 }
 
 /* Responsive Design */
-/* Responsive Design */
+@media (max-width: 768px) {
+  .welcomeText {
+    font-size: 2.5rem;
+  }
+
+  .progress-ring {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 8;
+  }
+
+  .progress-text {
+    font-size: 1.5rem;
+  }
+
+  .progress-container p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
+  .welcomeText {
+    font-size: 2rem;
+  }
+
   .progress-ring {
     width: 80px;
     height: 80px;
@@ -65,43 +87,41 @@
 
   .progress-ring__circle {
     stroke-width: 6;
-    /* Reduce stroke width for smaller SVG */
+  }
+
+  .progress-text {
+    font-size: 1.2rem;
+  }
+
+  .progress-container {
+    margin: 5px;
+  }
+
+  .progress-container p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .welcomeText {
+    font-size: 1.8rem;
+  }
+
+  .progress-ring {
+    width: 60px;
+    height: 60px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 4;
   }
 
   .progress-text {
     font-size: 1rem;
   }
 
-  .progress-container p {
-    font-size: 0.8rem;
-  }
-
   .progress-container {
-    margin: 0;
-  }
-
-  .welcomeText {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 460px) {
-  .progress-ring {
-    width: 50px;
-    height: 50px;
-  }
-
-  .progress-ring__circle {
-    stroke-width: 6;
-    /* Further reduce stroke width for even smaller SVG */
-  }
-
-  .progress-text {
-    font-size: 1.5rem;
-  }
-
-  .progress-container {
-    margin: 1px;
+    margin: 3px;
   }
 
   .progress-container p {
@@ -125,11 +145,10 @@
   z-index: 1000;
 }
 
-
-/* MOBILE VIEW Begin */
+/* Specific Mobile Adjustments */
 @media (max-width: 600px) {
   .center-image {
-    /* padding-top: 28%; */
+    padding-top: 28%;
   }
 
   .center-logo {
